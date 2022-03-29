@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:inicio/pages/products_pages.dart';
 import 'package:inicio/screens/home_screen.dart';
 
 void main() {
@@ -13,10 +14,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // ignore: prefer_const_constructors
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: ('hola'),
-      home: HomeScreen()
-    );
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primaryColor: Colors.blue,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
+        initialRoute: ProductsPage.id,
+        routes: {
+          ProductsPage.id: (context) => ProductsPage(),
+        });
   }
 }
-
